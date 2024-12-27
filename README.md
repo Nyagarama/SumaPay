@@ -6,4 +6,4 @@ The name “SUMA” is a combination of two words (SUSU + CHAMA)
 ## Team Members
 * Ernest T. Lartey
 * Manyala Paul
-* Morara Christopher
+* Morara Christopher: [Linkedin](https://www.linkedin.com/in/christopher-morara-746610124/) - [Github](https://github.com/Nyagarama) - [Twitter](https://x.com/chrismorara)
