@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.nav-link {
+    color: #fff !important;
+}
+.btn-primary {
+    background-color: #5A2D82;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #4A246D;
+}
