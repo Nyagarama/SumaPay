@@ -1,2 +1,10 @@
-       
-       
+div .card{
+    height: 50vh;
+    width: auto;
+}
+
+.hero-img{
+    height: 40vh;
+    width: auto;
+}
+
