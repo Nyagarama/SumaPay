@@ -14,70 +14,78 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/Front-end/index.html">Suma</a>
+            <a class="navbar-brand" href="/Front-end/index.html">
+                <h1>Suma</h1>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Groups</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Request</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front-end/index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-people"></i> Groups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-envelope"></i> Request</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-info-circle"></i> About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front-end/signIn.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-dark text-white text-center py-5">
-        <div class="container hero-txt">
-            <img src="/Front-end/images/four hands holding.png" alt="hero-img" class="hero-img img-left">
-            <h1>We Join forces for financial breakthrough</h1>
-            <p>Money vault for people alike</p>
+    <section class="bg-dark text-white py-5">
+        <div class="container d-flex align-items-center justify-content-center">
+            <div class="row w-100"></div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="/Front-end/images/four hands holding.png" alt="hero-img" class="hero-img  w-50">
+                </div>
+                <div class="col-md-6 text-center d-flex flex-column justify-content-center">
+                    <h1>We Join forces for financial breakthrough</h1>
+                    <p>Money vault for people alike</p>
+                </div>
+            </div>
         </div>
     </section>
 
    <!--main-->
-<div class="container my-5">
-    <div class="row">
-        <div class="col-md-3 mb-4" >
-            <div class="card">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="/Front-end/images/black individual doing registration online.jpg" alt="photo_reg" class="card-img-top">
                 <div class="card-body text-center">
                     <h5 class="card-title">Create an Account</h5>
                     <p class="card-text">Detailed description of feature 1</p>
-                    <p class="card-text"></p>
-                    <button class="btn btn-primary" onclick="www.Front-end/regist.html">Register</button>
+                    <button class="btn btn-primary" onclick="location.href='/Front-end/regist.html'">Register</button>
                 </div>
             </div>
         </div>
         <div class="col-md-3 mb-4">
-            <div class="card">
+            <div class="card h-100">
+                <img src="/Front-end/images/group of four individuals with the same interest.jpg" alt="photo_log" class="card-img-top">
                 <div class="card-body text-center">
                     <h5 class="card-title">Join/Create a group</h5>
                     <p class="card-text">Detailed description of feature 2</p>
-                    <p class="card-text"></p>
                     <button class="btn btn-primary" onclick="#">Join</button>
                 </div>
             </div>
         </div>
         <div class="col-md-3 mb-4">
-            <div class="card">
+            <div class="card h-100">
+                <img src="/Front-end/images/black individual using their phone to track their financial contribution.jpg" alt="photo_grp" class="card-img-top">
                 <div class="card-body text-center">
                     <h5 class="card-title">Track Account</h5>
                     <p class="card-text">Detailed description of feature 3</p>
-                    <p class="card-text"></p>
                     <button class="btn btn-primary" onclick="#">Login</button>
                 </div>
             </div>
         </div>
         <div class="col-md-3 mb-4">
-            <div class="card">
+            <div class="card h-100">
+                <img src="/Front-end/images/individual making online payment using  mobile phone.jpg" alt="photo_inter" class="card-img-top">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Feature 4</h5>
+                    <h5 class="card-title">Make payment</h5>
                     <p class="card-text">Track loan performance</p>
-                    <p class="card-text"></p>
                     <button class="btn btn-primary">Learn More</button>
                 </div>
             </div>
@@ -87,12 +95,25 @@
   
 </div>
     <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <p class="mb-0">About us</p>
-            <p class="mb-0">Email: info@suma.com</p>
-            <p class="mb-0">Post Office Box 2322, East-Hamrata Street, Loyne</p>
-            <p class="mb-0">Follow us on <a href="#">Facebook</a>, <a href="#">Instagram</a></p>
+    <footer class="text-center bg-dark py-4">
+        <div class="container text-white d-flex justify-content-between">
+            <div>
+                <h5>SumaPay</h5>
+            </div>
+            <div>
+                <p class="mb-0">About us</p>
+                <p class="mb-0">Email: info@suma.com</p>
+                <p class="mb-0">Post Office Box 2322, Dansoman-Estate Street, Accra</p>
+            </div>
+            <div>
+                <p class="mb-0">Follow us on:</p>
+                <p class="mb-0">
+                    <a href="#" class="text-white">Facebook</a>, 
+                    <a href="#" class="text-white">Instagram</a>, 
+                    <a href="#" class="text-white">Twitter</a>, 
+                    <a href="#" class="text-white">LinkedIn</a>
+                </p>
+            </div>
         </div>
     </footer>
 

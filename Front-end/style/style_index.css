@@ -1,10 +1,14 @@
-div .card{
-    height: 50vh;
-    width: auto;
+.card{
+   
 }
 
-.hero-img{
-    height: 40vh;
-    width: auto;
+.card-img{
+    width: 20px;
 }
 
+.hero_img{
+    width: 60vh;
+    justify-content: center;
+    position: relative;
+    margin: 20px;
+}
