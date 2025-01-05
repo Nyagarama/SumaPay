@@ -6,9 +6,7 @@
     width: 20px;
 }
 
-.hero_img{
-    width: 60vh;
-    justify-content: center;
-    position: relative;
-    margin: 20px;
+.hero-img{
+    height: auto;
+    width: 100vh;
 }
