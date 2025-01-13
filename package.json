@@ -1,0 +1,29 @@
+{
+    "name": "SumaPay",
+    "version": "1.0.0",
+    "description": "A project is a financial platform for a group of individuals who raise funds together and lend to each other with a return benefit",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ernest, Christopher, Paul",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mysql": "^8.0",
+        "dotenv": "^8.2.0",
+        "prettier": "^2.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    },
+    "keywords": [
+        "SumaPay",
+        "suma",
+        "bootstrap",
+        "nodejs",
+        "html"
+    ]
+
+}

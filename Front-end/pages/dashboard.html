@@ -28,20 +28,21 @@
 
     <div class="container-fluid">
         <div class="row">
-            <!-- Left Menu -->
+
+            <!-- board Menu -->
             <nav class="col-md-2 bg-light sidebar p-4">
                 <h5>Menu</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Groups</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                </ul>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Front-end/pages/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Front-end/pages/groups.html">Groups</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                    </ul>
             </nav>
 
             <div class="col-md-8">
@@ -103,10 +104,50 @@
                                 <h5 class="card-title">Credit Details</h5>
                                 <p><strong>Total Credit:</strong> $2000</p>
                                 <p><strong>Repayment Date:</strong> 2025-01-20</p>
-                                <button class="btn btn-warning">Repay Credit</button>
+                               
+                                <!-- Trigger Payment Modal -->
+                                <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                    Make a Payment
+                                </button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Payment Modal -->
+                    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="paymentModalLabel">Make a Payment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="paymentAmount" class="form-label">Amount</label>
+                                            <input type="number" class="form-control" id="paymentAmount" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="paymentDate" class="form-label">Date</label>
+                                            <input type="date" class="form-control" id="paymentDate" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="paymentMethod" class="form-label">Payment Method</label>
+                                            <select class="form-select" id="paymentMethod" required>
+                                                <option selected disabled value="">Choose...</option>
+                                                <option value="creditCard">Credit Card</option>
+                                                <option value="bankTransfer">Bank Transfer</option>
+                                                <option value="paypal">PayPal</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit Payment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
