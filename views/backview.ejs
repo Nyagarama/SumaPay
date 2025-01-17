@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Backend View</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to SumaPay</h1>
+    </header>
+    <main>
+        <h2><%= title %></h2>
+        <p><%= description %></p>
+        <ul>
+            <% items.forEach(function(item) { %>
+                <li><%= item %></li>
+            <% }); %>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 SumaPay. All rights reserved.</p>
+    </footer>
+</body>
+</html>

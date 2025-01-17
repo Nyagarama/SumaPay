@@ -1,14 +1,9 @@
 import express from 'express';
+const routes = express.Router();
+const fundController = require("../controllers/funds")
 
-const app = express();
-const port = 3000;
+//Endpoints api
+router.get("/admin", )
 
-// Define a simple route
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+module.exports = routes;
