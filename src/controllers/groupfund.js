@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import GroupFund, { find, findById } from '../models/groupfund';
+import fundModel from '../models/fundModel.sql';
 
 const router = Router();
 
 // Get all group funds
 router.get('/', async (req, res) => {
     try {
-        const groupFunds = await find();
+        const groupFunds = await fundModel.find();
         res.json(groupFunds);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -15,13 +15,13 @@ router.get('/', async (req, res) => {
 
 // Get one group fund
 router.get('/:id', getGroupFund, (req, res) => {
-    res.json(res.groupFund);
+    res.json(res.fundModel);
 });
 
 // Create a group fund
 router.post('/', async (req, res) => {
     const { name, amount, members } = req.body;
-    const groupFund = new GroupFund({ name, amount, members });
+    const groupFund = new fundModel({ name, amount, members });
 
     try {
         const newGroupFund = await groupFund.save();
@@ -37,7 +37,7 @@ router.patch('/:id', getGroupFund, async (req, res) => {
 
     if (name != null) res.groupFund.name = name;
     if (amount != null) res.groupFund.amount = amount;
-    if (members != null) res.groupFund.members = members;
+    if (members != null) res.fundModel.members = members;
 
     try {
         const updatedGroupFund = await res.groupFund.save();
@@ -50,7 +50,7 @@ router.patch('/:id', getGroupFund, async (req, res) => {
 // Delete a group fund
 router.delete('/:id', getGroupFund, async (req, res) => {
     try {
-        await res.groupFund.remove();
+        await res.fundModel.deleteOne();
         res.json({ message: 'Deleted Group Fund' });
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -59,11 +59,11 @@ router.delete('/:id', getGroupFund, async (req, res) => {
 
 async function getGroupFund(req, res, next) {
     try {
-        const groupFund = await findById(req.params.id);
+        const groupFund = await fundModel.findById(req.params.id);
         if (!groupFund) {
             return res.status(404).json({ message: 'Cannot find group fund' });
         }
-        res.groupFund = groupFund;
+        res.fundModel = groupFund;
         next();
     } catch (err) {
         res.status(500).json({ message: err.message });

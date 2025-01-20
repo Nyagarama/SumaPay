@@ -1,0 +1,21 @@
+/* media for home page rendering below 600 */
+@media only screen and (max-width: 600px) {
+    section{
+        position: absolute;
+        display: inline;
+        flex-direction: column;
+    }
+
+    /*.hero-img{
+        width: cover;
+        z-index: 1;
+    
+    }
+        */
+
+  
+    .text h1, p {
+        text-align: center;
+        z-index: 1;
+    }
+}

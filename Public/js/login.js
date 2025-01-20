@@ -1,18 +1,34 @@
 // Login route
-app.post('/login.js', (req, res) => {
-    const { email, password } = req.body;
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
     if (!email || !password) {
-        return res.status(400).json({ message: 'Email and password are required.' });
+        alert('Email and password are required.');
+        return;
     }
 
-    // login validation
-    const user = user.find(u => u.email === 'larteyernest@hotmail.com');
-    if (user && user.password === 'Stonecold') {
-        res.status(200).json({ message: 'Login successful.', user });
-        return;
-    } else {
-        return res.status(401).json({ message: 'Invalid email or password.' });
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert('Login successful.');
+            // Redirect or perform other actions on successful login
+        } else {
+            alert(result.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
     }
 });
-__esModule.exports = app;
