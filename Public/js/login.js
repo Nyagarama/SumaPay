@@ -1,17 +1,17 @@
-// Login route
-document.getElementById('loginForm').addEventListener('submit', async (event) => {
+// Login form submission
+document.getElementById('submit').addEventListener('click', async (event) => {
     event.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     if (!email || !password) {
-        alert('Email and password are required.');
+        console.log('Email and password are required.');
         return;
     }
 
     try {
-        const response = await fetch('/login', {
+        const response = await fetch('/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,16 +19,21 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
             body: JSON.stringify({ email, password })
         });
 
-        const result = await response.json();
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || 'An error occurred during login.');
+            console.log('Login successful.');
 
-        if (response.ok) {
-            alert('Login successful.');
-            // Redirect or perform other actions on successful login
-        } else {
-            alert(result.message);
-        }
+        const result = await response.json().catch(() => {
+            throw new Error('Invalid JSON response.');
+            console.log(result.message);
+
+        alert('Login successful.');
+        window.location.assign('/dashboard.html');
+        console.log('An error occurred. Please try again.');
     } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        alert(error.message || 'An error occurred. Please try again.');
+    }
     }
 });
