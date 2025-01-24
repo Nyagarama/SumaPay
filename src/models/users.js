@@ -31,7 +31,7 @@ const memberSchema = new mongoose.Schema({
 const contributionSchema = new mongoose.Schema({
   memberId: { type: mongoose.Schema.Types.ObjectId, ref: 'Member', required: true },
   amount: { type: Number, required: true },
-  type: { type: String, enum: ['savings', 'loan-payment'], required: true },
+  type: { type: String, enum: ['contribution', 'loan-payment'], required: true },
   date: { type: Date, default: Date.now },
   status: { type: String, enum: ['pending', 'confirmed'], default: 'pending' }
 });
@@ -58,3 +58,32 @@ const loanSchema = new mongoose.Schema({
   approvedAt: Date,
   createdAt: { type: Date, default: Date.now }
 });
+
+// payment.js
+const paymentSchema = new.mongoose.Schema({
+  memberId: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Member',
+    required: true
+  },
+  type: {
+    type: String,
+    enum: ['loan', 'contribution','fee'], // fee for delayed loan payment
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  method: {
+    type: String,
+    enum: ['credit card', 'paypal', 'm-pesa'],
+    required: true
+  },
+  status: {
+    type: String,
+    enum: ['pending', 'Completed', 'failed'],
+    default: 'pending'
+  },
+});
+module.exports = mongoose.model('Payment', paymentSchema);
