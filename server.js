@@ -1,5 +1,9 @@
-//server
-import http from 'http';
+const express = require('express');
+const app = express
+const http = require('http')
+
+
+//create a server
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/html'});
 
