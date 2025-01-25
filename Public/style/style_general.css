@@ -1,13 +1,50 @@
+*{
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0%;
+}
+
 body {
     font-family: Arial, sans-serif;
+    width: auto;
+    height: auto;
 }
+
 .nav-link {
     color: #fff !important;
 }
+
+
+
+/* hero section */
+section > div{
+    width: auto;
+    display: flex;
+    justify-content: center;   
+
+}
+
+section{
+    background-image: url('/Public/assets/hands\ of\ different\ race\ holding\ the\ cedis\ currency.jpg');
+    background-repeat: no-repeat;
+    height:40%;
+    padding: 0%;
+    display: flex;
+    background-size: cover;
+    
+}
+ section .col-mb-6 h4, h1{
+    display: flex;
+    right: 60%;
+
+ }
 .btn-primary {
     background-color: #5A2D82;
     border: none;
 }
 .btn-primary:hover {
-    background-color: #4A246D;
+    background-color: #4829fc;
 }
+
+

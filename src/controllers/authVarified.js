@@ -3,7 +3,6 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,23 +39,4 @@ app.post('/signin', (req, res) => {
     }
 });
 
-// Protected route
-app.get('/dashboard', authMiddleware, (req, res) => {
-    res.send(`Welcome to your dashboard, ${req.session.user}`);
-});
-
-// Logout session route
-app.post('/logout', (req, res) => {
-    req.session.destroy(err => {
-        if (err) {
-            return res.status(500).send('Could not log out.');
-        } else {
-            res.send('Logout successful');
-        }
-    });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
+module.exports = {users, authMiddleware }
