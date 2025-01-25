@@ -81,7 +81,7 @@ router.patch('/:memberId/status', verifyToken, isAdmin, async (req, res) => {
 // Record member contribution
 router.post('/:memberId/contributions', verifyToken, async (req, res) => {
     try {
-        const { amount, type = 'savings' } = req.body;
+        const { amount, type = 'savings, contribution',  } = req.body;
         const memberId = req.params.memberId;
 
         // Validate amount
