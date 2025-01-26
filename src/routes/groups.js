@@ -2,27 +2,27 @@
 const express = require('express');
 const router = express.Router();
 const group = require('../models/Groups');
-const groupservice = require('../groupservice.js')
-
+// const groupservice = require('../groupservice')
+ 
 // search whether a group exist
 // group routes
-groupRouter.get('/', (req, res) => {
+router.get('/', (req, res) => {
     try {
-        const groups = GroupSerivice.getAllGroups();
+        const groups = GroupService.getAllGroups();
         res.json(groups);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
-
-memberRouter.get('/:groupName', (req, res) => {
+ 
+router.get('/:groupName', (req, res) => {
     try {
         const { groupName } = req.params;
         const { search } = req.query;
-
+ 
         const members = getGroupMembers(groupName, search);
         const totalContribution = GroupSerivice.getTotalContribution(groupName);
-
+ 
         res.json({
             members,
             totalContribution
@@ -31,5 +31,6 @@ memberRouter.get('/:groupName', (req, res) => {
         res.status(404).json({ error: error.message });
     }
 });
-
-module.exports = { groupRouter, memberRouter };
+ 
+// module.exports = { groupRouter, memberRouter };
+module.exports = { router };
