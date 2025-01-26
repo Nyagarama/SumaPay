@@ -1,5 +1,8 @@
 const express = require('express');
-const http = require('http')
+const http = require('http');
+const cors = require('cors')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
  
 // Import the routers
 const apiRouter = require('./src/routes/api');
@@ -8,6 +11,21 @@ const groupRouter = require('./src/routes/groups');
 const membersRouter = require('./src/routes/members');
  
 const app = express()
+ 
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/sumapay', {
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((error) => {
+  console.error('Error connecting to MongoDB:', error);
+});
+ 
+// Use body-parser middleware for parsing requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+ 
+// use cors to allow the frontend to make requests
+app.use(cors())
  
 // Bind the routers to the express app
 app.use('/api', apiRouter);
