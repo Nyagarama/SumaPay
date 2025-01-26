@@ -32,4 +32,4 @@ memberRouter.get('/:groupName', (req, res) => {
     }
 });
 
-export { groupRouter, memberRouter };
+module.exports = { groupRouter, memberRouter };

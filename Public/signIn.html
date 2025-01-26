@@ -50,14 +50,14 @@
     <div class="container d-flex justify-content-center">
         <div class="row w-100">
             <div class="col-md-6 d-flex flex-column justify-content-center">
-                <form id="signform">
+                <form id="signform" action="/src/routes/auth.js" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">User ID</label>
-                        <input type="email" class="form-control" id="email" placeholder="email / phone number">
+                        <input type="email" class="form-control" id="email" placeholder="email / phone number" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="6 characters or more">
+                        <input type="password" class="form-control" id="password" placeholder="6 characters or more" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-auto" id="submit">Sign In</button>
