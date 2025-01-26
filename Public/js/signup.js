@@ -2,7 +2,7 @@ const signUpForm = document.getElementById("signform");
  
 
 // attach the submit handler
-signUpForm.addEventListener('submit', (event)) => {
+signUpForm.addEventListener('submit', async(event) => {
     event.preventDefault();
 
     //gather all the info. from the form
