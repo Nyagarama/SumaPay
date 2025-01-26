@@ -1,3 +1,6 @@
+// groups.js
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const schema = new mongoose.Schema({
     groupname: {type: String, required: true, unique: true },
     groupemail: { type: String, required: true, unique: true },
