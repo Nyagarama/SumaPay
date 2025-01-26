@@ -62,7 +62,7 @@ const loanSchema = new mongoose.Schema({
 });
 
 // payment.js
-const paymentSchema = new.mongoose.Schema({
+const paymentSchema = new mongoose.Schema({
   memberId: {
     type: mongoose.Types.ObjectId,
     ref: 'Member',
