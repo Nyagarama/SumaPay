@@ -16,7 +16,7 @@ signUpForm.addEventListener('submit', async(event) => {
         password: password
     };
     
-    //make arequest to the backend server
+    //make a request to the backend server
     const result = await fetch (
         'http://127.0.0.1:3000/auth/register',
         {
