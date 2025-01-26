@@ -6,9 +6,9 @@ The name “SUMA” is a combination of two words (SUSU + CHAMA)
 
 ## KEY FEATURES
 
-### Create a user account,
+### Create a user account
 
-### Create member profile,
+### Create member profile
 
 ### Create or join a group
 
