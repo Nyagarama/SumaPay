@@ -5,10 +5,10 @@ The name “SUMA” is a combination of two words (SUSU + CHAMA)
 “Chama” as translated in Swahili refers to a party, society or organization that is united towards a common goal.
 
 ## KEY FEATURES
--   Create a user account
--   Create member profile
--   Create or join a group
--   View available groups
+### Create a user account
+### Create member profile
+### Create or join a group
+### View available groups
 
 
 ## Team Members
