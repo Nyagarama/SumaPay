@@ -1,7 +1,7 @@
 // User.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-
+ 
 const userSchema = new mongoose.Schema({
   userId: { type: Number, required: true, unique: true },
   username: { type: String, required: true, unique: true },
@@ -10,15 +10,15 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['admin', 'member'], default: 'member' },
   createdAt: { type: Date, default: Date.now }
 });
-
-
+ 
+ 
 userSchema.pre('save', async function(next) {
   if (this.isModified('password')) {
     this.password = await bcrypt.hash(this.password, 10);
   }
   next();
 });
-
+ 
 // Member.js
 const memberSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -28,7 +28,7 @@ const memberSchema = new mongoose.Schema({
   activeLoans: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Loan' }],
   status: { type: String, enum: ['active', 'inactive'], default: 'active' }
 });
-
+ 
 // Contribution.js
 const contributionSchema = new mongoose.Schema({
   memberId: { type: mongoose.Schema.Types.ObjectId, ref: 'Member', required: true },
@@ -37,7 +37,7 @@ const contributionSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   status: { type: String, enum: ['pending', 'confirmed'], default: 'pending' }
 });
-
+ 
 // Loan.js
 const loanSchema = new mongoose.Schema({
   memberId: { type: mongoose.Schema.Types.ObjectId, ref: 'Member', required: true },
@@ -60,7 +60,7 @@ const loanSchema = new mongoose.Schema({
   approvedAt: Date,
   createdAt: { type: Date, default: Date.now }
 });
-
+ 
 // payment.js
 const paymentSchema = new mongoose.Schema({
   memberId: {
